@@ -1,30 +1,30 @@
 const morseDictionary = {
-  A: ".-",
-  B: "-...",
-  C: "-.-.",
-  D: "-..",
-  E: ".",
-  F: "..-.",
-  G: "--.",
-  H: "....",
-  I: "..",
-  J: ".---",
-  K: "-.-",
-  L: ".-..",
-  M: "--",
-  N: "-.",
-  O: "---",
-  P: ".--.",
-  Q: "--.-",
-  R: ".-.",
-  S: "...",
-  T: "-",
-  U: "..-",
-  V: "...-",
-  W: ".--",
-  X: "-..-",
-  Y: "-.--",
-  Z: "--..",
+  a: ".-",
+  b: "-...",
+  c: "-.-.",
+  d: "-..",
+  e: ".",
+  f: "..-.",
+  g: "--.",
+  h: "....",
+  i: "..",
+  j: ".---",
+  k: "-.-",
+  l: ".-..",
+  m: "--",
+  n: "-.",
+  o: "---",
+  p: ".--.",
+  q: "--.-",
+  r: ".-.",
+  s: "...",
+  t: "-",
+  u: "..-",
+  v: "...-",
+  w: ".--",
+  x: "-..-",
+  y: "-.--",
+  z: "--..",
   1: ".----",
   2: "..---",
   3: "...--",
@@ -44,15 +44,69 @@ const morseDictionary = {
   ")": "-.--.-",
 };
 
-export const translate = (letter, language) => {
+const englishDictionary = {
+  ".-": "a",
+  "-...": "b",
+  "-.-.": "c",
+  "-..": "d",
+  ".": "e",
+  "..-.": "f",
+  "--.": "g",
+  "....": "h",
+  "..": "i",
+  ".---": "j",
+  "-.-": "k",
+  ".-..": "l",
+  "--": "m",
+  "-.": "n",
+  "---": "o",
+  ".--.": "p",
+  "--.-": "q",
+  ".-.": "r",
+  "...": "s",
+  "-": "t",
+  "..-": "u",
+  "...-": "v",
+  ".--": "w",
+  "-..-": "x",
+  "-.--": "y",
+  "--..": "z",
+  ".----": "1",
+  "..---": "2",
+  "...--": "3",
+  "....-": "4",
+  ".....": "5",
+  "-....": "6",
+  "--...": "7",
+  "---..": "8",
+  "----.": "9",
+  "-----": "0",
+};
+
+export const translate = (word, language) => {
   let morseResult = "";
+  let englishResult = "";
 
   if (language == "toEnglish") {
-    morseResult =
-      morseDictionary[letter] != undefined
-        ? `${morseDictionary[letter]} `
-        : " # ";
+    for (let i = 0; i < word.length; i++) {
+      if (!morseDictionary[word[i]]) {
+        englishResult += "#";
+      } else {
+        englishResult += `${morseDictionary[word[i]]} `;
+      }
+    }
+    return englishResult;
+  } else if (language == "toMorse") {
+    const morseArr = word.split(" ");
+    for (let i = 0; i < morseArr.length; i++) {
+      if (!englishDictionary[morseArr[i]]) {
+        morseResult += "";
+      } else {
+        morseResult += englishDictionary[morseArr[i]];
+      }
+    }
     return morseResult;
   }
+
   return "";
 };

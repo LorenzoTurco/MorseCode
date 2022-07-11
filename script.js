@@ -7,10 +7,10 @@ const englishResultInput = document.querySelector(".english-result");
 
 const handleTranslate = (event) => {
   if (event.target.className == "eng-to-morse") {
-    morseResultInput.value += translate(
-      event.target.value[event.target.value.length - 1],
-      "toEnglish"
-    );
+    morseResultInput.value = translate(englishWord.value, "toEnglish");
+  }
+  if (event.target.className == "morse-to-eng") {
+    englishResultInput.value = translate(morseWord.value, "toMorse");
   }
 };
 
