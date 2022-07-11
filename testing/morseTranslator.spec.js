@@ -1,5 +1,5 @@
 import { expect, it } from "@jest/globals";
-import { translate } from "./translator";
+import { translate } from "../scripts/translator";
 
 describe("testing translator", () => {
   it("should display: .- ", () => {
