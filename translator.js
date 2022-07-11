@@ -49,7 +49,10 @@ export const translate = (letter, language) => {
 
   if (language == "toEnglish") {
     morseResult =
-      morseDictionary[letter] != undefined ? `${morseDictionary[letter]} ` : "";
+      morseDictionary[letter] != undefined
+        ? `${morseDictionary[letter]} `
+        : " # ";
+    return morseResult;
   }
-  return morseResult;
+  return "";
 };
