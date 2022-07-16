@@ -1,38 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <title>Morse Code Translator</title>
-  </head>
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <title>Morse Code Translator</title>
+</head>
+
+<header><h2 class="project-title">Morse Code Translator</h2></header>
+
 <div class="container">
 
-  <div class ="container__one">
-  <h2>English to Morse</h2>
-    <label for="morse">Enter Word</label>
-    <input class="eng-to-morse"type="text">
+  <div class ="container__english">
+    <fieldset>
+      <legend class ="english__text">Text</legend>
+      <span id="eng-to-morse" class="container__input"contenteditable="true"></span>
+    </fieldset> 
+  </div>
+  
+  <div class ="container__morse">   
+    <fieldset>
+      <legend class ="morse__text">Morse Code</legend>
+      <span id="morse-to-eng" class="container__input" contenteditable="true"></span>
+    </fieldset>
+  </div>
 
-
-    <label for="morse-result">Result</label>
-    <input class="morse-result"type="text">
 </div>
-
-<div class ="container__two">
-    <h2>Morse to English</h2>
-
-    <label for="morse-to-eng">Enter Word</label>
-    <input class="morse-to-eng"type="text">
-
-
-
-    <label for="english-result">Result</label>
-    <input class="english-result"type="text">
-  </div>
-  </div>
-  </body>
+</body>
 </html>
 
 <script type="module" src="scripts/script.js" ></script>

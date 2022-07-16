@@ -1,3 +1,16 @@
+@use "./_variables.scss" as *;
+
+header{
+
+    .project-title{
+
+        font-size: 2.5rem;
+        text-align: center;
+        font-family:$mainFont;
+        font-weight: 600;
+    }
+}
+
 .container{
 
     display: flex;
@@ -5,4 +18,32 @@
     align-items: center;
     gap: 3rem;
 
+    .container__english{
+
+        .english__text{
+            font-size: 2rem;
+            font-family:$mainFont;
+        }
+    }
+
+    .container__morse{
+
+        .morse__text{
+            font-size: 2rem;
+            font-family:$mainFont;
+
+        }
+    }
+
+    .container__input{
+
+        padding:1rem;
+        font-size:1.5rem;
+        display: inline-block;
+        min-width: 200px; 
+        max-width: 350px;
+        border: none;
+        outline:none;
+        font-family:$mainFont;     
+    }
 }

@@ -35,13 +35,7 @@ const morseDictionary = {
   8: "---..",
   9: "----.",
   0: "-----",
-  ", ": "--..--",
-  ".": ".-.-.-",
-  "?": "..--..",
-  "/": "-..-.",
-  "-": "-....-",
-  "(": "-.--.",
-  ")": "-.--.-",
+  " ": "/",
 };
 
 const englishDictionary = {
@@ -81,22 +75,26 @@ const englishDictionary = {
   "---..": "8",
   "----.": "9",
   "-----": "0",
+  "/": "  ",
 };
 
 export const translate = (word, language) => {
   let morseResult = "";
   let englishResult = "";
 
-  if (language == "toEnglish") {
+  word = word.toLowerCase();
+
+  if (language == "toMorse") {
     for (let i = 0; i < word.length; i++) {
-      if (!morseDictionary[word[i]]) {
+      console.log(word[i]);
+      if (!morseDictionary[word[i].toLowerCase()]) {
         englishResult += "#";
       } else {
         englishResult += `${morseDictionary[word[i]]} `;
       }
     }
     return englishResult;
-  } else if (language == "toMorse") {
+  } else if (language == "toEnglish") {
     const morseArr = word.split(" ");
     for (let i = 0; i < morseArr.length; i++) {
       if (!englishDictionary[morseArr[i]]) {
