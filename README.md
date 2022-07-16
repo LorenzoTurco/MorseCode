@@ -2,5 +2,9 @@
 
 ##### Simple morse code converter developed using Test Driven Development and the Jest Library for unit testing.
 
-![Test cases](images/test-cases-png)
-![Application screenshot](images/application.png)
+<br>
+<img src="images/test-cases.png" alt ="Test cases>
+
+<br>
+
+<img src="images/application.png" alt ="Application screenshot" width="60%" height="60%">
